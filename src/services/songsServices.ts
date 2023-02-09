@@ -1,5 +1,5 @@
 import songData from './songs.json'
-import { Song, SongBasics } from '../types'
+import { Song, SongBasics, SongWithoutId } from '../types'
 
 const songs: Song[] = songData as Song[]
 
@@ -18,4 +18,12 @@ export const getSongBasics = (): SongBasics[] => (
   songs.map(({ id, title, author, duration, feat }) => ({ id, title, author, duration, feat }))
 )
 
-export const addSong = (): void => undefined
+export const addSong = (newSongData: SongWithoutId): Song => {
+  const newSong: Song = {
+    id: Math.max(...songs.map((song) => song.id)) + 1,
+    ...newSongData
+  }
+
+  songs.push(newSong)
+  return newSong
+}
