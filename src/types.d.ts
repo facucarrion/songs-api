@@ -1,4 +1,4 @@
-type Genre = 'reggaeton' | 'trap' | 'house'
+import { Genre } from './enums'
 
 export interface Song {
   id: number
