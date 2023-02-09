@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "author": "Quevedo",
+    "title": "Ahora Qué",
+    "duration": "2:51",
+    "feat": []
+  },
+  {
+    "id": 2,
+    "author": "Quevedo",
+    "title": "Yankee",
+    "duration": "3:14",
+    "feat": []
+  },
+  {
+    "id": 3,
+    "author": "Quevedo",
+    "title": "Vista al Mar",
+    "duration": "3:00",
+    "feat": []
+  },
+  {
+    "id": 4,
+    "author": "Quevedo",
+    "title": "Playa del Inglés",
+    "duration": "3:57",
+    "feat": [
+      "Myke Towers"
+    ]
+  }
+]
