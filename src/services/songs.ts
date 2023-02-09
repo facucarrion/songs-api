@@ -1,4 +1,7 @@
+import { Song } from '../types'
 import songData from './songs.json'
 
-export const getSongs = () => songData
-export const addSong = () => null
+const songs = songData as Song[]
+
+export const getSongs = (): Song[] => songs
+export const addSong = (): void => undefined

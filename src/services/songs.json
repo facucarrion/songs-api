@@ -3,34 +3,38 @@
     "id": 1,
     "author": "Quevedo",
     "title": "Ahora Qué",
-    "duration": "2:51",
+    "duration": 161,
     "genre": "reggaeton",
-    "feat": []
+    "feat": [],
+    "album": "Donde Quiero Estar"
   },
   {
     "id": 2,
     "author": "Quevedo",
     "title": "Yankee",
-    "duration": "3:14",
+    "duration": 194,
     "genre": "reggaeton",
-    "feat": []
+    "feat": [],
+    "album": "Donde Quiero Estar"
   },
   {
     "id": 3,
     "author": "Quevedo",
     "title": "Vista al Mar",
-    "duration": "3:00",
+    "duration": 180,
     "genre": "reggaeton",
-    "feat": []
+    "feat": [],
+    "album": "Donde Quiero Estar"
   },
   {
     "id": 4,
     "author": "Quevedo",
     "title": "Playa del Inglés",
-    "duration": "3:57",
+    "duration": 237,
     "genre": "reggaeton",
     "feat": [
       "Myke Towers"
-    ]
+    ],
+    "album": "Donde Quiero Estar"
   }
 ]
