@@ -9,3 +9,5 @@ export interface Song {
   feat: string[]
   album: string
 }
+
+export type SongBasics = Pick<Song, 'id' | 'author' | 'title' | 'duration' | 'feat'>
