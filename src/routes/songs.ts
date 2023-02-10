@@ -1,6 +1,6 @@
 import express from 'express'
 import * as songsServices from '../services/songsServices'
-import toNewSong from '../utilities'
+import toNewSong from '../postUtilities'
 
 const router = express.Router()
 
