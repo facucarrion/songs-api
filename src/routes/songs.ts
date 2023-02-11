@@ -17,6 +17,15 @@ router.get('/:id', (req, res) => {
   res.send(song)
 })
 
+router.delete('/:id', (req, res) => {
+  const deletedSong = songsServices.deleteSong(+req.params.id)
+  if (deletedSong != null) {
+    res.send(deletedSong)
+  } else {
+    res.status(404).send('Song not found')
+  }
+})
+
 router.post('/', (req, res) => {
   try {
     const newSong = toNewSong(req.body)
