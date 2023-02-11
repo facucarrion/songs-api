@@ -1,5 +1,6 @@
 import express from 'express'
 import songRouter from './routes/songs'
+import './db/mongoose'
 
 const app = express()
 app.use(express.json()) // Middleware -> req.body to JSON
