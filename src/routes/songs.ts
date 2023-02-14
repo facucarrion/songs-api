@@ -1,20 +1,10 @@
 import express from 'express'
 import * as songsServices from '../services/songsServices'
 import toNewSong from '../postUtilities'
-
 const router = express.Router()
 
 router.get('/', (_req, res) => {
-  res.send(songsServices.getAllSongs())
-})
-
-router.get('/basics', (_req, res) => {
-  res.send(songsServices.getSongBasics())
-})
-
-router.get('/:id', (req, res) => {
-  const song = songsServices.findSongById(+req.params.id)
-  res.send(song)
+  songsServices.getAllSongs(res)
 })
 
 router.delete('/:id', (req, res) => {

@@ -1,22 +1,17 @@
+import { SongModel } from '../models/SongModel'
 import songData from './songs.json'
-import { Song, SongBasics, SongWithoutId } from '../types'
+import { Song, SongWithoutId } from '../types'
+import { Response } from 'express'
 
 let songs: Song[] = songData as Song[]
 
-export const getAllSongs = (): Song[] => songs
+export const getAllSongs = (res: Response): Song[] | undefined => {
+  SongModel.find({})
+    .then((songs) => res.send(songs))
+    .catch((error) => error)
 
-export const findSongById = (id: number): SongBasics | undefined => {
-  const song = songs.find((song) => song.id === id)
-  if (song != null) {
-    const { genre, album, ...basics } = song
-    return { ...basics }
-  }
   return undefined
 }
-
-export const getSongBasics = (): SongBasics[] => (
-  songs.map(({ id, title, author, duration, feat }) => ({ id, title, author, duration, feat }))
-)
 
 export const deleteSong = (id: number): Song[] | undefined => {
   const song = songData.find(song => song.id === id)
@@ -26,12 +21,15 @@ export const deleteSong = (id: number): Song[] | undefined => {
   } return undefined
 }
 
-export const addSong = (newSongData: SongWithoutId): Song => {
-  const newSong: Song = {
+export const addSong = (newSongData: SongWithoutId): Song | undefined => {
+  const newSong = new SongModel({
     id: Math.max(...songs.map((song) => song.id)) + 1,
     ...newSongData
-  }
+  })
 
-  songs.push(newSong)
-  return newSong
+  newSong.save()
+    .then(() => newSong)
+    .catch((error) => console.log(error))
+
+  return undefined
 }
